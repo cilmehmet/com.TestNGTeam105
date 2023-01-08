@@ -9,7 +9,6 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class C02_NegetifLoginTesti {
-
     // 3 test method'u olusturun
     // 1.de yanlis email, dogru sifre
     // 2.de dogru email yanlis sifre
@@ -65,5 +64,6 @@ public class C02_NegetifLoginTesti {
         ReusableMethods.bekle(3);
         Driver.closeDriver();
     }
+
 
 }

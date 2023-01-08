@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.QualitydemyPage;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class C04_NegativeLoginTesti {
     // 3 test method'u olusturun
@@ -15,7 +16,8 @@ public class C04_NegativeLoginTesti {
 
     @Test
     public void yanlisEmailTesti(){
-
+        ReusableMethods.bekle(3);
+        qualitydemyPage= new QualitydemyPage();
         Driver.getDriver().get("https://www.qualitydemy.com/");
         qualitydemyPage.ilkLoginLinki.click();
         qualitydemyPage.kullaniciEmailKutusu.sendKeys("mehmet@abc.com");
@@ -30,6 +32,7 @@ public class C04_NegativeLoginTesti {
     @Test
     public void yanlisPasswordTesti(){
         Driver.getDriver().get("https://www.qualitydemy.com/");
+        qualitydemyPage= new QualitydemyPage();
         qualitydemyPage.ilkLoginLinki.click();
         qualitydemyPage.kullaniciEmailKutusu.sendKeys("user_1106147@login.com");
         qualitydemyPage.passwordKutusu.sendKeys("123456");
@@ -44,6 +47,7 @@ public class C04_NegativeLoginTesti {
     @Test
     public void yanlisEmailYanlisPasswordTesti(){
         Driver.getDriver().get("https://www.qualitydemy.com/");
+        qualitydemyPage= new QualitydemyPage();
         qualitydemyPage.ilkLoginLinki.click();
         qualitydemyPage.kullaniciEmailKutusu.sendKeys("mehmet@abc.com");
         qualitydemyPage.passwordKutusu.sendKeys("123456");
