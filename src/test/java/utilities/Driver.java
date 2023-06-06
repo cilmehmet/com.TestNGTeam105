@@ -3,6 +3,7 @@ package utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
@@ -34,7 +35,9 @@ public class Driver {
 
                 case "chrome":
                 WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
+                    ChromeOptions ops = new ChromeOptions();
+                    ops.addArguments("--remote-allow-origins=*");
+                    driver = new ChromeDriver(ops);
                 break;
 
                 case "firefox":
@@ -49,7 +52,9 @@ public class Driver {
 
                 default:
                 WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
+                    ChromeOptions ops2 = new ChromeOptions();
+                    ops2.addArguments("--remote-allow-origins=*");
+                    driver = new ChromeDriver(ops2);
 
             }
 
